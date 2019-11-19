@@ -15,7 +15,7 @@ public class Controller {
     @FXML                                          // image3 and image4 are the bottom hand.
     private Button attack, split;
     @FXML
-    private CheckBox topL,topR,bottomL,bottomR;     //top is player 2, and bottom is player1
+    private Button bottomL,bottomR;     //top is player 2, and bottom is player1
     @FXML
     private TextArea textArea;      //action taken is displayed in the textArea.
     @FXML
@@ -25,32 +25,64 @@ public class Controller {
     private Player player2 = new Player();
     private int turn=0;
 
-    public void attackAction() {
-        //I am thinking of using the images as what they want to attack with.
-        if (topL.isSelected() && bottomL.isSelected()) {
-            if ((turn%2) == 0)
-            image1.setImage(new Image("/Hands/2.jpg"));
+    @FXML
+    public void btnHitLeft_click(){
+        //To do: check and see if the user has two hands. If they do, ask which hand they would like to hit with. Then
+        //use that hand to grab the value to pass as the first parameter in increaseValue(); If they only have one hand, hit with the remaining one
 
-            topL.setSelected(false);
-            bottomL.setSelected(false);     //This is to deselect the checkboxes.
+        player2.increaseValue(1,0);//the amount will later on come from which ever hand the player hit them with. For now its just for testing. Side = 0(left hand) Side = 1(right hand)
+
+        if(player2.isOut(0)) {
+            switch (player2.getValue(0)) {
+                case 1:
+                    image1.setImage(new Image("/Hands/1.jpg"));
+                    break;
+                case 2:
+                    image1.setImage(new Image("/Hands/2.jpg"));
+                    break;
+                case 3:
+                    image1.setImage(new Image("/Hands/3.jpg"));
+                    break;
+                case 4:
+                    image1.setImage(new Image("/Hands/4.jpg"));
+                    break;
+                default:
+                    break;
+            }
         }
-        else if (topL.isSelected() && bottomR.isSelected()) {
-            image3.setImage(new Image("/Hands/3.jpg"));
-
-            topL.setSelected(false);
-            bottomR.setSelected(false);
+        else {
+            image1.setImage(new Image("/Hands/5.jpg"));
         }
-        else if (topR.isSelected() && bottomL.isSelected()) {
-            image2.setImage(new Image("/Hands/4.jpg"));
+    }
 
-            topR.setSelected(false);
-            bottomL.setSelected(false);
+    @FXML
+    public void btnHitRight_click(){
+        //To do: check and see if the user has two hands. If they do, ask which hand they would like to hit with. Then
+        //use that hand to grab the value to pass as the first parameter in increaseValue(); If they only have one hand, hit with the remaining one
+
+        player2.increaseValue(3,1);//the amount will later on come from which ever hand the player hit them with. For now its just for testing. Side = 0(left hand) Side = 1(right hand)
+
+        if(player2.isOut(1)) {
+            switch (player2.getValue(1)) {
+                case 1:
+                    image2.setImage(new Image("/Hands/6.jpg"));
+                    break;
+                case 2:
+                    image2.setImage(new Image("/Hands/7.jpg"));
+                    break;
+                case 3:
+                    image2.setImage(new Image("/Hands/8.jpg"));
+                    break;
+                case 4:
+                    image2.setImage(new Image("/Hands/9.jpg"));
+                    break;
+                default:
+                    break;
+            }
         }
-        else if (topR.isSelected() && bottomR.isSelected()) {
-            image4.setImage(new Image("/Hands/5.jpg"));
+        else {
 
-            topR.setSelected(false);
-            bottomR.setSelected(false);
+            image2.setImage(new Image("/Hands/10.jpg"));
         }
     }
 

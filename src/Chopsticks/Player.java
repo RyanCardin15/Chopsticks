@@ -9,16 +9,16 @@ public class Player {
         if(side == 0)
         {
             if(leftHand.isActive())
-                leftHand.add(0);
-            else
                 leftHand.add(amount);
+            else
+                leftHand.add(0);
         }
         else
         {
             if(rightHand.isActive())
-                rightHand.add(0);
-            else
                 rightHand.add(amount);
+            else
+                rightHand.add(0);
         }
     }
 
@@ -36,4 +36,14 @@ public class Player {
         }
     }
 
+    public boolean isOut(int side){
+        if(side == 0)
+        {
+            return leftHand.isActive();
+        }
+        else
+        {
+            return rightHand.isActive();
+        }
+    }
 }

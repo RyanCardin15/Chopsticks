@@ -10,10 +10,13 @@ public class Hand {
     }
 
     public void add(int fingers) {
-        this.fingers += (fingers % 5);
-        if(fingers == 0) {
+        this.fingers += fingers;
+        if(this.fingers == 5) {
             active = false;
+            this.fingers = 0;
         }
+        else if(this.fingers > 5)
+            this.fingers = (this.fingers % 5);
     }
 
     public boolean isActive() {
