@@ -9,6 +9,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
@@ -18,7 +19,7 @@
             <Insets />
         </opaqueInsets>
         <FlowPane.margin>
-            <Insets left="50.0" right="75.0" top="10.0" />
+            <Insets bottom="30.0" left="50.0" right="90.0" top="10.0" />
         </FlowPane.margin>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="200.0">
             <ImageView fx:id="image1" fitHeight="260.0" fitWidth="145.0" layoutX="50.0" layoutY="7.0" pickOnBounds="true" rotate="180.0">
@@ -37,7 +38,7 @@
             </ImageView>
         </AnchorPane>
     </SplitPane>
-    <TextArea fx:id="textArea" editable="false" focusTraversable="false" prefHeight="260.0" prefWidth="315.0" promptText="Action Taken" wrapText="true">
+    <TextArea fx:id="textArea" editable="false" focusTraversable="false" prefHeight="295.0" prefWidth="364.0" promptText="Action Taken" wrapText="true">
         <FlowPane.margin>
           <Insets top="20.0" />
         </FlowPane.margin>
@@ -65,22 +66,37 @@
          <Button fx:id="bottomR" layoutX="168.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#btnHitRight_click" text="Hit" />
         </AnchorPane>
     </SplitPane>
-    <Button fx:id="attack" focusTraversable="false" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Attack">
-        <FlowPane.margin>
-          <Insets bottom="60.0" left="75.0" top="75.0" />
-        </FlowPane.margin>
-    </Button>
-    <Label fx:id="player" text="Player: 1" textFill="#2600ff">
-        <FlowPane.margin>
-          <Insets bottom="80.0" />
-        </FlowPane.margin>
-        <font>
-          <Font name="System Bold" size="18.0" />
-        </font>
-    </Label>
-    <Button fx:id="split" focusTraversable="false" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Split">
-        <FlowPane.margin>
-          <Insets bottom="60.0" top="75.0" />
-        </FlowPane.margin>
-    </Button>
+   <BorderPane prefHeight="200.0" prefWidth="400.0">
+      <left>
+          <Button fx:id="attack" focusTraversable="false" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Attack Left" BorderPane.alignment="CENTER">
+            <font>
+               <Font size="18.0" />
+            </font>
+          </Button>
+      </left>
+      <top>
+          <Label fx:id="player" text="Player: 1" textFill="#2600ff" BorderPane.alignment="CENTER">
+              <font>
+                <Font name="System Bold" size="18.0" />
+              </font>
+          </Label>
+      </top>
+      <FlowPane.margin>
+         <Insets left="70.0" top="25.0" />
+      </FlowPane.margin>
+      <center>
+          <Button fx:id="split" focusTraversable="false" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Split" BorderPane.alignment="CENTER">
+            <font>
+               <Font size="18.0" />
+            </font>
+          </Button>
+      </center>
+      <right>
+         <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Attack Right" BorderPane.alignment="CENTER">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+      </right>
+   </BorderPane>
 </FlowPane>
