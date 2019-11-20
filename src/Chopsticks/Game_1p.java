@@ -12,7 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Paint;
 
 
-public class Contr_Game_1p {
+public class Game_1p {
     @FXML
     private ImageView image1,image2,image3,image4; //image1 and image2 are the top hands, and
     @FXML                                          // image3 and image4 are the bottom hand.

@@ -30,16 +30,12 @@ public class StartingMenu {
     public void startGame() {
 
         if (onePlayer.isSelected() && !twoPlayer.isSelected()) {
-            System.out.println("Yea");
             if (traditional.isPressed()) {
-                System.out.println("Yea");
                 change_page(traditional, "Game_1p.fxml");
             }
         }
         else if (twoPlayer.isSelected() && !onePlayer.isSelected()) {
-            System.out.println("Yea");
             if (traditional.isPressed()) {
-                System.out.println("Yea");
                 change_page(traditional, "Game_2p.fxml");
             }
         }
