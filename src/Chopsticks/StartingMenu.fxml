@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Chopsticks.StartingMenu">
+   <children>
+      <BorderPane prefHeight="150.0" prefWidth="400.0">
+         <top>
+            <Label text="Chopsticks" textFill="#0080ff" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </top>
+         <center>
+            <Label prefWidth="180.0" text="Please choose a game " BorderPane.alignment="TOP_CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </Label>
+         </center>
+         <FlowPane.margin>
+            <Insets left="105.0" top="50.0" />
+         </FlowPane.margin>
+         <left>
+            <CheckBox fx:id="onePlayer" mnemonicParsing="false" text="Single Player" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+         </left>
+         <right>
+            <CheckBox fx:id="twoPlayer" mnemonicParsing="false" text="Two Player" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+         </right>
+      </BorderPane>
+      <Button fx:id="traditional" mnemonicParsing="false" onMousePressed="#startGame" prefHeight="45.0" prefWidth="100.0" text="Traditional">
+         <FlowPane.margin>
+            <Insets left="65.0" />
+         </FlowPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="100.0" text="Something">
+         <FlowPane.margin>
+            <Insets left="25.0" />
+         </FlowPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</FlowPane>

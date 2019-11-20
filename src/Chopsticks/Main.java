@@ -10,9 +10,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Game_2p.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("StartingMenu.fxml"));
         primaryStage.setTitle("Chopsticks");
-        primaryStage.setScene(new Scene(root, 1000, 600));
+        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.centerOnScreen();
         primaryStage.setResizable(false);
         primaryStage.show();
     }

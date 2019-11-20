@@ -79,17 +79,17 @@
                <Font size="18.0" />
             </font>
             <BorderPane.margin>
-               <Insets top="15.0" />
+               <Insets top="25.0" />
             </BorderPane.margin>
           </Button>
       </left>
       <top>
           <Label fx:id="player" text="** Player: 1 **" textFill="#2600ff" BorderPane.alignment="BOTTOM_CENTER">
               <font>
-                <Font name="System Bold" size="18.0" />
+                <Font name="System Bold" size="29.0" />
               </font>
             <BorderPane.margin>
-               <Insets top="55.0" />
+               <Insets top="40.0" />
             </BorderPane.margin>
           </Label>
       </top>
@@ -102,7 +102,7 @@
                <Font size="18.0" />
             </font>
             <BorderPane.margin>
-               <Insets top="15.0" />
+               <Insets top="25.0" />
             </BorderPane.margin>
           </Button>
       </center>
@@ -112,7 +112,7 @@
                <Font size="18.0" />
             </font>
             <BorderPane.margin>
-               <Insets top="15.0" />
+               <Insets top="25.0" />
             </BorderPane.margin>
          </Button>
       </right>
