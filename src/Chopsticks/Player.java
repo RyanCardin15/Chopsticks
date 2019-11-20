@@ -4,7 +4,7 @@ public class Player {
     private Hand leftHand = new Hand();
     private Hand rightHand = new Hand();
 
-    public void increaseValue(int amount, int side)
+    public void increaseFinger(int amount, int side)
     {
         if(side == 0)
         {
@@ -25,7 +25,7 @@ public class Player {
     /*\
         returns the value
      */
-    public int getValue(int side){
+    public int getFinger(int side){
         if(side == 0)
         {
             return leftHand.getFingers();
