@@ -21,7 +21,7 @@ public class Hand {
 
     public boolean isActive() {
         return active;
-    }
+}
 
     public boolean isSplittable() {
        return ((fingers % 2) == 0);

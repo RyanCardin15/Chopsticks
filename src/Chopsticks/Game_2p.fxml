@@ -86,7 +86,7 @@
       <top>
           <Label fx:id="player" text="** Player: 1 **" textFill="#2600ff" BorderPane.alignment="BOTTOM_CENTER">
               <font>
-                <Font name="System Bold" size="29.0" />
+                <Font name="System Bold" size="28.0" />
               </font>
             <BorderPane.margin>
                <Insets top="40.0" />
