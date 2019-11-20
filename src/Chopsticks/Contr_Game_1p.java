@@ -1,6 +1,6 @@
 /**
  * For single player
- * Ryan
+ * Ryan Cardin
  */
 package Chopsticks;
 
