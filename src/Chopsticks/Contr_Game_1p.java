@@ -45,10 +45,10 @@ public class Contr_Game_1p {
         //To do: check and see if the user has two hands. If they do, ask which hand they would like to hit with. Then
         //use that hand to grab the value to pass as the first parameter in increaseValue(); If they only have one hand, hit with the remaining one
 
-        player2.increaseFinger(1,0);//the amount will later on come from which ever hand the player hit them with. For now its just for testing. Side = 0(left hand) Side = 1(right hand)
+        player2.increaseHand(1,0);//the amount will later on come from which ever hand the player hit them with. For now its just for testing. Side = 0(left hand) Side = 1(right hand)
 
         if(player2.isOut(0)) {
-            switch (player2.getFinger(0)) {
+            switch (player2.getHand(0)) {
                 case 1:
                     image1.setImage(new Image("/Hands/1.jpg"));
                     break;
@@ -76,10 +76,10 @@ public class Contr_Game_1p {
         //To do: check and see if the user has two hands. If they do, ask which hand they would like to hit with. Then
         //use that hand to grab the value to pass as the first parameter in increaseValue(); If they only have one hand, hit with the remaining one
 
-        player2.increaseFinger(3,1);//the amount will later on come from which ever hand the player hit them with. For now its just for testing. Side = 0(left hand) Side = 1(right hand)
+        player2.increaseHand(3,1);//the amount will later on come from which ever hand the player hit them with. For now its just for testing. Side = 0(left hand) Side = 1(right hand)
 
         if(player2.isOut(1)) {
-            switch (player2.getFinger(1)) {
+            switch (player2.getHand(1)) {
                 case 1:
                     image2.setImage(new Image("/Hands/6.jpg"));
                     break;
@@ -101,9 +101,4 @@ public class Contr_Game_1p {
             image2.setImage(new Image("/Hands/10.jpg"));
         }
     }
-
-    public void changeImage() {
-        image1.setImage(new Image("/Hands/3.jpg"));
-    }
-
 }

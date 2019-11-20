@@ -29,7 +29,7 @@
                 </effect>
                 <Image url="@../Hands/1.jpg" />
             </ImageView>
-         <CheckBox fx:id="topL" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
+         <CheckBox fx:id="topL" disable="true" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="200.0">
             <ImageView fx:id="image2" fitHeight="260.0" fitWidth="145.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" rotate="180.0">
@@ -38,13 +38,16 @@
                 </effect>
                 <Image url="@../Hands/6.jpg" />
             </ImageView>
-         <CheckBox fx:id="topR" layoutX="177.0" layoutY="14.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
+         <CheckBox fx:id="topR" disable="true" layoutX="177.0" layoutY="14.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
         </AnchorPane>
     </SplitPane>
-    <TextArea fx:id="textArea" editable="false" focusTraversable="false" prefHeight="295.0" prefWidth="364.0" wrapText="true">
+    <TextArea fx:id="textArea" editable="false" focusTraversable="false" prefHeight="295.0" prefWidth="364.0" text="Turn 1&#10;Player: 1's Turn!!&#10;" wrapText="true">
         <FlowPane.margin>
           <Insets top="20.0" />
         </FlowPane.margin>
+      <font>
+         <Font size="16.0" />
+      </font>
     </TextArea>
     <SplitPane dividerPositions="0.5" prefHeight="275.0" prefWidth="425.0">
         <FlowPane.margin>
@@ -94,7 +97,7 @@
          <Insets left="70.0" top="25.0" />
       </FlowPane.margin>
       <center>
-          <Button fx:id="split" focusTraversable="false" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Split" BorderPane.alignment="TOP_CENTER">
+          <Button fx:id="split" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#splitting" prefHeight="45.0" prefWidth="125.0" text="Split" BorderPane.alignment="TOP_CENTER">
             <font>
                <Font size="18.0" />
             </font>

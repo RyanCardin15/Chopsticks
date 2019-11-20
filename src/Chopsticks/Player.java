@@ -4,7 +4,7 @@ public class Player {
     private Hand leftHand = new Hand();
     private Hand rightHand = new Hand();
 
-    public void increaseFinger(int amount, int side)
+    public void increaseHand(int amount, int side)
     {
         if(side == 0)
         {
@@ -22,10 +22,21 @@ public class Player {
         }
     }
 
+    public void splitFingers() {
+        int temp = (leftHand.getFingers() + rightHand.getFingers());
+        if (temp%2 == 0) {
+            leftHand.setFingers(temp/2);
+            rightHand.setFingers(temp/2);
+        }
+        else {
+            leftHand.setFingers((temp/2)+1);
+            rightHand.setFingers(temp/2);
+        }
+    }
     /*\
         returns the value
      */
-    public int getFinger(int side){
+    public int getHand(int side){
         if(side == 0)
         {
             return leftHand.getFingers();
@@ -45,5 +56,11 @@ public class Player {
         {
             return rightHand.isActive();
         }
+    }
+    public boolean isFinished() {
+        if (!leftHand.isActive() && !rightHand.isActive())
+            return true;
+        else
+            return false;
     }
 }
