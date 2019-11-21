@@ -55,7 +55,7 @@
                 </effect>
                 <Image url="@../Hands/6.jpg" />
             </ImageView>
-         <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
+         <CheckBox fx:id="bottomL" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="166.0">
             <ImageView fx:id="image4" fitHeight="260.0" fitWidth="145.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true">
@@ -64,12 +64,12 @@
                 </effect>
                 <Image url="@../Hands/1.jpg" />
             </ImageView>
-         <CheckBox layoutX="177.0" layoutY="14.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
+         <CheckBox fx:id="bottomR" layoutX="177.0" layoutY="14.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
         </AnchorPane>
     </SplitPane>
    <BorderPane prefHeight="200.0" prefWidth="405.0">
       <left>
-          <Button fx:id="attack" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Attack Left" BorderPane.alignment="TOP_CENTER">
+          <Button fx:id="attackL" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#btnHitLeft_click" prefHeight="45.0" prefWidth="125.0" text="Attack Left" BorderPane.alignment="TOP_CENTER">
             <font>
                <Font size="18.0" />
             </font>
@@ -92,7 +92,7 @@
          <Insets left="70.0" top="25.0" />
       </FlowPane.margin>
       <center>
-          <Button fx:id="split" focusTraversable="false" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Split" BorderPane.alignment="TOP_CENTER">
+          <Button fx:id="split" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#splitting" prefHeight="45.0" prefWidth="125.0" text="Split" BorderPane.alignment="TOP_CENTER">
             <font>
                <Font size="18.0" />
             </font>
@@ -102,7 +102,7 @@
           </Button>
       </center>
       <right>
-         <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Attack Right" BorderPane.alignment="TOP_CENTER">
+         <Button fx:id="attackR" mnemonicParsing="false" onMouseClicked="#btnHitRight_click" prefHeight="45.0" prefWidth="125.0" text="Attack Right" BorderPane.alignment="TOP_CENTER">
             <font>
                <Font size="18.0" />
             </font>

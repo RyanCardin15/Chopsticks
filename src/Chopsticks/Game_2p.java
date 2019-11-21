@@ -158,90 +158,90 @@ public class Game_2p {
 
         if ((turn%2)==0) {
             if (topL.isSelected() && !topR.isSelected()) {
-                player1.increaseHand((player2.getHand(0)), 1);
-                textArea.appendText("Player 2's LEFT hand hit Player 1's RIGHT hand\n");
-                topL.setSelected(false);
-            }
-            else if (topR.isSelected() && !topL.isSelected()) {
-                player1.increaseHand((player2.getHand(1)), 1);
-                textArea.appendText("Player 2's RIGHT hand hit Player 1's RIGHT hand\n");
-                topR.setSelected(false);
-            }
-            else if (topL.isSelected() && topR.isSelected()){
-                textArea.appendText("Player 2 what are you doing?? Next turn!\n");
-                topL.setSelected(false);
-                topR.setSelected(false);
-            }
-            else
-                textArea.appendText("Player 2 passes\n");
+            player1.increaseHand((player2.getHand(0)), 1);
+            textArea.appendText("Player 2's LEFT hand hit Player 1's RIGHT hand\n");
+            topL.setSelected(false);
+        }
+        else if (topR.isSelected() && !topL.isSelected()) {
+            player1.increaseHand((player2.getHand(1)), 1);
+            textArea.appendText("Player 2's RIGHT hand hit Player 1's RIGHT hand\n");
+            topR.setSelected(false);
+        }
+        else if (topL.isSelected() && topR.isSelected()){
+            textArea.appendText("Player 2 what are you doing?? Next turn!\n");
+            topL.setSelected(false);
+            topR.setSelected(false);
+        }
+        else
+            textArea.appendText("Player 2 passes\n");
 
-            if(player1.isOut(1)) {
-                switch (player1.getHand(1)) {
-                    case 1:
-                        image4.setImage(new Image("/Hands/1.jpg"));
-                        break;
-                    case 2:
-                        image4.setImage(new Image("/Hands/2.jpg"));
-                        break;
-                    case 3:
-                        image4.setImage(new Image("/Hands/3.jpg"));
-                        break;
-                    case 4:
-                        image4.setImage(new Image("/Hands/4.jpg"));
-                        break;
-                    default:
-                        break;
-                }
-            }
-            else {
-                image4.setImage(new Image("/Hands/5.jpg"));
-                textArea.appendText("This hand has been destroyed\n");
+        if(player1.isOut(1)) {
+            switch (player1.getHand(1)) {
+                case 1:
+                    image4.setImage(new Image("/Hands/1.jpg"));
+                    break;
+                case 2:
+                    image4.setImage(new Image("/Hands/2.jpg"));
+                    break;
+                case 3:
+                    image4.setImage(new Image("/Hands/3.jpg"));
+                    break;
+                case 4:
+                    image4.setImage(new Image("/Hands/4.jpg"));
+                    break;
+                default:
+                    break;
             }
         }
         else {
-            if (bottomL.isSelected() && !bottomR.isSelected()) {
-                player2.increaseHand((player1.getHand(0)), 1);
-                textArea.appendText("Player 1's LEFT hand hit Player 2's RIGHT hand\n");
-                bottomL.setSelected(false);
-            }
-            else if (bottomR.isSelected() && !bottomL.isSelected()) {
-                player2.increaseHand((player1.getHand(1)), 1);
-                textArea.appendText("Player 1's RIGHT hand hit Player 2's RIGHT hand\n");
-                bottomR.setSelected(false);
-            }
-            else if (bottomL.isSelected() && bottomR.isSelected()) {
-                textArea.appendText("Player 1 what are you doing?? Next turn!\n");
-                bottomL.setSelected(false);
-                bottomR.setSelected(false);
-            }
-            else
-                textArea.appendText("Player 2 passes\n");
+            image4.setImage(new Image("/Hands/5.jpg"));
+            textArea.appendText("This hand has been destroyed\n");
+        }
+    }
+        else {
+        if (bottomL.isSelected() && !bottomR.isSelected()) {
+            player2.increaseHand((player1.getHand(0)), 1);
+            textArea.appendText("Player 1's LEFT hand hit Player 2's RIGHT hand\n");
+            bottomL.setSelected(false);
+        }
+        else if (bottomR.isSelected() && !bottomL.isSelected()) {
+            player2.increaseHand((player1.getHand(1)), 1);
+            textArea.appendText("Player 1's RIGHT hand hit Player 2's RIGHT hand\n");
+            bottomR.setSelected(false);
+        }
+        else if (bottomL.isSelected() && bottomR.isSelected()) {
+            textArea.appendText("Player 1 what are you doing?? Next turn!\n");
+            bottomL.setSelected(false);
+            bottomR.setSelected(false);
+        }
+        else
+            textArea.appendText("Player 2 passes\n");
 
-            if(player2.isOut(1)) {
-                switch (player2.getHand(1)) {
-                    case 1:
-                        image2.setImage(new Image("/Hands/6.jpg"));
-                        break;
-                    case 2:
-                        image2.setImage(new Image("/Hands/7.jpg"));
-                        break;
-                    case 3:
-                        image2.setImage(new Image("/Hands/8.jpg"));
-                        break;
-                    case 4:
-                        image2.setImage(new Image("/Hands/9.jpg"));
-                        break;
-                    default:
-                        break;
-                }
-            }
-            else {
-                image2.setImage(new Image("/Hands/10.jpg"));
-                textArea.appendText("This hand has been destroyed\n");
+        if(player2.isOut(1)) {
+            switch (player2.getHand(1)) {
+                case 1:
+                    image2.setImage(new Image("/Hands/6.jpg"));
+                    break;
+                case 2:
+                    image2.setImage(new Image("/Hands/7.jpg"));
+                    break;
+                case 3:
+                    image2.setImage(new Image("/Hands/8.jpg"));
+                    break;
+                case 4:
+                    image2.setImage(new Image("/Hands/9.jpg"));
+                    break;
+                default:
+                    break;
             }
         }
-        turnChange();
-        gameWinner();
+        else {
+            image2.setImage(new Image("/Hands/10.jpg"));
+            textArea.appendText("This hand has been destroyed\n");
+        }
+    }
+    turnChange();
+    gameWinner();
     }
 
     public void splitting() {
