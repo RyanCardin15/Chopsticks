@@ -1,13 +1,8 @@
 package Chopsticks;
 
 public class Hand {
-    private int fingers;
-    private boolean active;
-
-    public Hand() {
-        fingers = 1;
-        active = true;
-    }
+    private int fingers=1;
+    private boolean active=true;
 
     public void add(int fingers) {
         this.fingers += fingers;

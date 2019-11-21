@@ -70,23 +70,23 @@ public class Game_1p {
             if (player2.isOut(0)) {
                 switch (player2.getHand(0)) {
                     case 1:
-                        image1.setImage(new Image("/Hands/1.jpg"));
+                        image1.setImage(new Image("/Hands/Right1.jpg"));
                         break;
                     case 2:
-                        image1.setImage(new Image("/Hands/2.jpg"));
+                        image1.setImage(new Image("/Hands/Right2.jpg"));
                         break;
                     case 3:
-                        image1.setImage(new Image("/Hands/3.jpg"));
+                        image1.setImage(new Image("/Hands/Right3.jpg"));
                         break;
                     case 4:
-                        image1.setImage(new Image("/Hands/4.jpg"));
+                        image1.setImage(new Image("/Hands/Right4.jpg"));
                         break;
                     default:
                         break;
                 }
             }
             else {
-                image1.setImage(new Image("/Hands/5.jpg"));
+                image1.setImage(new Image("/Hands/Right0.jpg"));
                 textArea.appendText("This hand has been destroyed\n");
             }
 
@@ -119,23 +119,23 @@ public class Game_1p {
         if(player2.isOut(1)) {
             switch (player2.getHand(1)) {
                 case 1:
-                    image2.setImage(new Image("/Hands/6.jpg"));
+                    image2.setImage(new Image("/Hands/Left1.jpg"));
                     break;
                 case 2:
-                    image2.setImage(new Image("/Hands/7.jpg"));
+                    image2.setImage(new Image("/Hands/Left2.jpg"));
                     break;
                 case 3:
-                    image2.setImage(new Image("/Hands/8.jpg"));
+                    image2.setImage(new Image("/Hands/Left3.jpg"));
                     break;
                 case 4:
-                    image2.setImage(new Image("/Hands/9.jpg"));
+                    image2.setImage(new Image("/Hands/Left4.jpg"));
                     break;
                 default:
                     break;
             }
         }
         else {
-            image2.setImage(new Image("/Hands/10.jpg"));
+            image2.setImage(new Image("/Hands/Left0.jpg"));
             textArea.appendText("This hand has been destroyed\n");
         }
         turnChange();
@@ -148,32 +148,32 @@ public class Game_1p {
             player2.splitFingers();
             switch (player2.getHand(0)) {
                 case 1:
-                    image1.setImage(new Image("/Hands/1.jpg"));
+                    image1.setImage(new Image("/Hands/Right1.jpg"));
                     break;
                 case 2:
-                    image1.setImage(new Image("/Hands/2.jpg"));
+                    image1.setImage(new Image("/Hands/Right2.jpg"));
                     break;
                 case 3:
-                    image1.setImage(new Image("/Hands/3.jpg"));
+                    image1.setImage(new Image("/Hands/Right3.jpg"));
                     break;
                 case 4:
-                    image1.setImage(new Image("/Hands/4.jpg"));
+                    image1.setImage(new Image("/Hands/Right4.jpg"));
                     break;
                 default:
                     break;
             }
             switch (player2.getHand(1)) {
                 case 1:
-                    image2.setImage(new Image("/Hands/6.jpg"));
+                    image2.setImage(new Image("/Hands/Left1.jpg"));
                     break;
                 case 2:
-                    image2.setImage(new Image("/Hands/7.jpg"));
+                    image2.setImage(new Image("/Hands/Left2.jpg"));
                     break;
                 case 3:
-                    image2.setImage(new Image("/Hands/8.jpg"));
+                    image2.setImage(new Image("/Hands/Left3.jpg"));
                     break;
                 case 4:
-                    image2.setImage(new Image("/Hands/9.jpg"));
+                    image2.setImage(new Image("/Hands/Left4.jpg"));
                     break;
                 default:
                     break;
@@ -184,32 +184,32 @@ public class Game_1p {
             player1.splitFingers();
             switch (player1.getHand(0)) {
                 case 1:
-                    image3.setImage(new Image("/Hands/6.jpg"));
+                    image3.setImage(new Image("/Hands/Left1.jpg"));
                     break;
                 case 2:
-                    image3.setImage(new Image("/Hands/7.jpg"));
+                    image3.setImage(new Image("/Hands/Left2.jpg"));
                     break;
                 case 3:
-                    image3.setImage(new Image("/Hands/8.jpg"));
+                    image3.setImage(new Image("/Hands/Left3.jpg"));
                     break;
                 case 4:
-                    image3.setImage(new Image("/Hands/9.jpg"));
+                    image3.setImage(new Image("/Hands/Left4.jpg"));
                     break;
                 default:
                     break;
             }
             switch (player1.getHand(1)) {
                 case 1:
-                    image4.setImage(new Image("/Hands/1.jpg"));
+                    image4.setImage(new Image("/Hands/Right1.jpg"));
                     break;
                 case 2:
-                    image4.setImage(new Image("/Hands/2.jpg"));
+                    image4.setImage(new Image("/Hands/Right2.jpg"));
                     break;
                 case 3:
-                    image4.setImage(new Image("/Hands/3.jpg"));
+                    image4.setImage(new Image("/Hands/Right3.jpg"));
                     break;
                 case 4:
-                    image4.setImage(new Image("/Hands/4.jpg"));
+                    image4.setImage(new Image("/Hands/Right4.jpg"));
                     break;
                 default:
                     break;
@@ -234,7 +234,7 @@ public class Game_1p {
         if(splitOrNot == 0)
         {
             player2.splitFingers();
-            textArea.appendText("Computer split fingers");
+            textArea.appendText("Computer split fingers\n");
         }
         else {
             if (player1.isOut(0) && player1.isOut(1))//if player 1 has both hands active
@@ -244,19 +244,19 @@ public class Game_1p {
                     //computer hits player 1's random hand with its random hand
                     player1.increaseHand(player2.getHand(randhitfrom), randhit);
                     textArea.appendText("Computers " + nameCheck(randhitfrom) + " hand  hit Player 1's " + nameCheck(randhit) + " hand\n");
-                    textArea.appendText("This is the computers " + nameCheck(randhitfrom) + " value: " + player2.getHand(randhitfrom));
+                    //textArea.appendText("This is the computers " + nameCheck(randhitfrom) + " value: " + player2.getHand(randhitfrom));
                 } else if (player2.isOut(0) && !player2.isOut(1))//if player 1 has both hand active and computer has only left hand
                 {
                     //computer hits player 1's random hands with its left hand
                     player1.increaseHand(player2.getHand(0), randhit);
                     textArea.appendText("Computers left hand hit Player 1's " + nameCheck(randhit) + " hand\n");
-                    textArea.appendText("This is the computers left value: " + player2.getHand(0));
+                   //textArea.appendText("This is the computers left value: " + player2.getHand(0));
                 } else if (!player2.isOut(0) && player2.isOut(1))//if player 1 has both hand active and computer has only right hand
                 {
                     //computer hits player 1's random hand with its right hand
                     player1.increaseHand(player2.getHand(1), randhit);
                     textArea.appendText("Computers right hand hit Player 1's " + nameCheck(randhit) + " hand\n");
-                    textArea.appendText("This is the computers right value: " + player2.getHand(1));
+                    //textArea.appendText("This is the computers right value: " + player2.getHand(1));
                 }
             } else if (!player1.isOut(0) && player1.isOut(1))//if player 1 has only its left hand active
             {
@@ -296,49 +296,49 @@ public class Game_1p {
             }
         }
 
-            if (player1.isOut(0)) {
-                switch (player1.getHand(0)) {
-                    case 1:
-                        image3.setImage(new Image("/Hands/6.jpg"));
-                        break;
-                    case 2:
-                        image3.setImage(new Image("/Hands/7.jpg"));
-                        break;
-                    case 3:
-                        image3.setImage(new Image("/Hands/8.jpg"));
-                        break;
-                    case 4:
-                        image3.setImage(new Image("/Hands/9.jpg"));
-                        break;
-                    default:
-                        break;
-                }
-            } else {
-                image3.setImage(new Image("/Hands/10.jpg"));
-                textArea.appendText("This hand has been destroyed\n");
+        if (player1.isOut(0)) {
+            switch (player1.getHand(0)) {
+                case 1:
+                    image3.setImage(new Image("/Hands/Left1.jpg"));
+                    break;
+                case 2:
+                    image3.setImage(new Image("/Hands/Left2.jpg"));
+                    break;
+                case 3:
+                    image3.setImage(new Image("/Hands/Left3.jpg"));
+                    break;
+                case 4:
+                    image3.setImage(new Image("/Hands/Left4.jpg"));
+                    break;
+                default:
+                    break;
             }
+        } else {
+            image3.setImage(new Image("/Hands/Left0.jpg"));
+            textArea.appendText("This hand has been destroyed\n");
+        }
 
-            if (player1.isOut(1)) {
-                switch (player1.getHand(1)) {
-                    case 1:
-                        image4.setImage(new Image("/Hands/1.jpg"));
-                        break;
-                    case 2:
-                        image4.setImage(new Image("/Hands/2.jpg"));
-                        break;
-                    case 3:
-                        image4.setImage(new Image("/Hands/3.jpg"));
-                        break;
-                    case 4:
-                        image4.setImage(new Image("/Hands/4.jpg"));
-                        break;
-                    default:
-                        break;
-                }
-            } else {
-                image4.setImage(new Image("/Hands/5.jpg"));
-                textArea.appendText("This hand has been destroyed\n");
+        if (player1.isOut(1)) {
+            switch (player1.getHand(1)) {
+                case 1:
+                    image4.setImage(new Image("/Hands/Right1.jpg"));
+                    break;
+                case 2:
+                    image4.setImage(new Image("/Hands/Right2.jpg"));
+                    break;
+                case 3:
+                    image4.setImage(new Image("/Hands/Right3.jpg"));
+                    break;
+                case 4:
+                    image4.setImage(new Image("/Hands/Right4.jpg"));
+                    break;
+                default:
+                    break;
             }
+        } else {
+            image4.setImage(new Image("/Hands/Right0.jpg"));
+            textArea.appendText("This hand has been destroyed\n");
+        }
 
         turnChange();
         gameWinner();
