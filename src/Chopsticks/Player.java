@@ -23,6 +23,8 @@ public class Player {
     }
 
     public void splitFingers() {
+        leftHand.setActive(true);
+        rightHand.setActive(true);
         int temp = (leftHand.getFingers() + rightHand.getFingers());
         if (temp%2 == 0) {
             leftHand.setFingers(temp/2);

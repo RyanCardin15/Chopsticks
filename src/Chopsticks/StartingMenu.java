@@ -16,11 +16,11 @@ public class StartingMenu {
     @FXML
     private Button traditional;
 
-    public void change_page(Button b, String page) {
+    public void change_page(Button b, String fxml) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource(page));
+            Parent root = FXMLLoader.load(getClass().getResource(fxml));
             Stage stage = (Stage)b.getScene().getWindow();
-            stage.setScene(new Scene(root));stage.centerOnScreen();
+            stage.setScene(new Scene(root));
             stage.centerOnScreen();
         } catch (IOException e) {
             e.printStackTrace();
@@ -31,12 +31,12 @@ public class StartingMenu {
 
         if (onePlayer.isSelected() && !twoPlayer.isSelected()) {
             if (traditional.isPressed()) {
-                change_page(traditional, "Game_1p.fxml");
+                change_page(traditional, "SinglePlayer.fxml");
             }
         }
         else if (twoPlayer.isSelected() && !onePlayer.isSelected()) {
             if (traditional.isPressed()) {
-                change_page(traditional, "Game_2p.fxml");
+                change_page(traditional, "TwoPlayers.fxml");
             }
         }
     }

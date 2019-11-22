@@ -1,8 +1,13 @@
 package Chopsticks;
 
 public class Hand {
-    private int fingers=1;
-    private boolean active=true;
+    private int fingers;
+    private boolean active;
+
+    public Hand() {
+        this.fingers = 1;
+        this.active = true;
+    }
 
     public void add(int fingers) {
         this.fingers += fingers;
@@ -16,14 +21,14 @@ public class Hand {
 
     public boolean isActive() {
         return active;
-}
-
-    public boolean isSplittable() {
-       return ((fingers % 2) == 0);
     }
 
     public void setFingers(int fingers) {
         this.fingers = fingers;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public int getFingers() {
