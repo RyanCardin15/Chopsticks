@@ -14,7 +14,7 @@ public class StartingMenu {
     @FXML
     private CheckBox onePlayer,twoPlayer;
     @FXML
-    private Button traditional;
+    private Button traditional, Hardcore;
 
     public void change_page(Button b, String fxml) {
         try {
@@ -39,5 +39,18 @@ public class StartingMenu {
                 change_page(traditional, "TwoPlayers.fxml");
             }
         }
+
+        if (onePlayer.isSelected() && !twoPlayer.isSelected()) {
+            if (Hardcore.isPressed()) {
+                change_page(Hardcore, "SinglePlayerHardcore.fxml");
+            }
+        }
+        else if (twoPlayer.isSelected() && !onePlayer.isSelected()) {
+            if (Hardcore.isPressed()) {
+                change_page(Hardcore, "TwoPlayersHardcore.fxml");
+            }
+        }
+
+
     }
 }

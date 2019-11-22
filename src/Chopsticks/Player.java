@@ -22,6 +22,23 @@ public class Player {
         }
     }
 
+    public void increaseHandHardcore(int amount, int side){
+        if(side == 0){
+            if(leftHand.isActive())
+                leftHand.addHardcore(amount);
+            else
+                leftHand.addHardcore(0);
+        }
+        else{
+            if(rightHand.isActive())
+                rightHand.addHardcore(amount);
+            else
+                rightHand.addHardcore(0);
+        }
+    }
+
+
+
     public void splitFingers() {
         leftHand.setActive(true);
         rightHand.setActive(true);

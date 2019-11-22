@@ -19,6 +19,15 @@ public class Hand {
             this.fingers = (this.fingers % 5);
     }
 
+    public void addHardcore(int fingers){
+        this.fingers += fingers;
+        if(this.fingers >= 5){
+            active = false;
+            this.fingers = 0;
+        }
+    }
+
+
     public boolean isActive() {
         return active;
     }
