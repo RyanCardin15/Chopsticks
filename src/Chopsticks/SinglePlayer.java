@@ -354,8 +354,7 @@ public class Game_1p {
             return "right";
     }
 
-
-
+    
     public void gameWinner() {
         if (player1.isFinished()) {
             textArea.appendText("The computer is the winner!!");

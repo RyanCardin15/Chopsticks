@@ -25,15 +25,11 @@ public abstract class Chopsticks {
 
     public abstract void turnChange();
 
-    @FXML
     public abstract void btnHitLeft_click();
 
-    @FXML
     public abstract void btnHitRight_click();
 
-
     public abstract void splitting();
-
 
     public abstract void gameWinner();
 }
