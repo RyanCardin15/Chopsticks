@@ -326,8 +326,7 @@ public class SinglePlayer extends Chopsticks {
             return "right";
     }
 
-
-
+    
     public void gameWinner() {
         if (player1.isFinished()) {
             actionTaken.appendText("The Computer is the winner!!");
