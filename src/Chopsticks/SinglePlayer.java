@@ -335,21 +335,21 @@ public class SinglePlayer extends Chopsticks {
             actionTaken.appendText("The Computer is the winner!!");
             player.setText("**Computer is the winner!! **");
             player.setTextFill(Paint.valueOf("Red"));
-            bottomL.setDisable(true);
-            bottomR.setDisable(true);
-            attackL.setDisable(true);
-            attackR.setDisable(true);
-            split.setDisable(true);
         }
         else if(player2.isFinished()) {
             actionTaken.appendText("Player 1 is the winner!!");
             player.setText("** Player: 1 is the winner!! **");
             player.setTextFill(Paint.valueOf("Blue"));
-            bottomL.setDisable(true);
-            bottomR.setDisable(true);
-            attackL.setDisable(true);
-            attackR.setDisable(true);
-            split.setDisable(true);
         }
+        bottomL.setDisable(true);
+        bottomR.setDisable(true);
+        attackL.setDisable(true);
+        attackR.setDisable(true);
+        split.setDisable(true);
+    }
+
+    @Override
+    public void restMenu() {
+        super.restMenu();
     }
 }

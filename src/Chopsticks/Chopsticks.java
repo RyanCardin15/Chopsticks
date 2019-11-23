@@ -1,17 +1,23 @@
 package Chopsticks;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public abstract class Chopsticks {
     @FXML
     protected ImageView p2Left,p2Right,p1Left,p1Right; //p2Left and p2Right are player 2's hands, and
     @FXML                                            //p1Left and p1Right are player 1's hands.
-    protected Button attackL, attackR, split;
+    protected Button attackL, attackR, split, BackMenu;
     @FXML
     protected CheckBox topL,topR,bottomL,bottomR;     //top is computer, and bottom is player1
     @FXML
@@ -32,4 +38,15 @@ public abstract class Chopsticks {
     public abstract void splitting();
 
     public abstract void gameWinner();
+
+    public void restMenu() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("StartingMenu.fxml"));
+            Stage stage = (Stage)BackMenu.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.centerOnScreen();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

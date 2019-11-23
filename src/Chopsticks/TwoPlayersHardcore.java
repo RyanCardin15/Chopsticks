@@ -5,17 +5,11 @@
 package Chopsticks;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Paint;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 
 
-public class TwoPlayers extends Chopsticks {
+public class TwoPlayersHardcore extends Chopsticks {
 
     public void turnChange() {
 
@@ -52,12 +46,12 @@ public class TwoPlayers extends Chopsticks {
 
         if ((turn%2)==0) {
             if (topL.isSelected() && !topR.isSelected()) {
-                player1.increaseHand((player2.getHand(0)), 0);
+                player1.increaseHardcore((player2.getHand(0)), 0);
                 actionTaken.appendText("Player 2's LEFT hand hit Player 1's LEFT hand\n");
                 topL.setSelected(false);
             }
             else if (topR.isSelected() && !topL.isSelected()) {
-                player1.increaseHand((player2.getHand(1)), 0);
+                player1.increaseHardcore((player2.getHand(1)), 0);
                 actionTaken.appendText("Player 2's RIGHT hand hit Player 1's LEFT hand\n");
                 topR.setSelected(false);
             }
@@ -94,12 +88,12 @@ public class TwoPlayers extends Chopsticks {
         }
         else {
             if (bottomL.isSelected() && !bottomR.isSelected()) {
-                player2.increaseHand((player1.getHand(0)), 0);
+                player2.increaseHardcore((player1.getHand(0)), 0);
                 actionTaken.appendText("Player 1's LEFT hand hit Player 2's LEFT hand\n");
                 bottomL.setSelected(false);
             }
             else if (bottomR.isSelected() && !bottomL.isSelected()) {
-                player2.increaseHand((player1.getHand(1)), 0);
+                player2.increaseHardcore((player1.getHand(1)), 0);
                 actionTaken.appendText("Player 1's RIGHT hand hit Player 2's LEFT hand\n");
                 bottomR.setSelected(false);
             }
@@ -145,12 +139,12 @@ public class TwoPlayers extends Chopsticks {
 
         if ((turn%2)==0) {
             if (topL.isSelected() && !topR.isSelected()) {
-            player1.increaseHand((player2.getHand(0)), 1);
+            player1.increaseHardcore((player2.getHand(0)), 1);
             actionTaken.appendText("Player 2's LEFT hand hit Player 1's RIGHT hand\n");
             topL.setSelected(false);
             }
             else if (topR.isSelected() && !topL.isSelected()) {
-                player1.increaseHand((player2.getHand(1)), 1);
+                player1.increaseHardcore((player2.getHand(1)), 1);
                 actionTaken.appendText("Player 2's RIGHT hand hit Player 1's RIGHT hand\n");
                 topR.setSelected(false);
             }
@@ -187,12 +181,12 @@ public class TwoPlayers extends Chopsticks {
         }
         else {
             if (bottomL.isSelected() && !bottomR.isSelected()) {
-                player2.increaseHand((player1.getHand(0)), 1);
+                player2.increaseHardcore((player1.getHand(0)), 1);
                 actionTaken.appendText("Player 1's LEFT hand hit Player 2's RIGHT hand\n");
                 bottomL.setSelected(false);
             }
             else if (bottomR.isSelected() && !bottomL.isSelected()) {
-                player2.increaseHand((player1.getHand(1)), 1);
+                player2.increaseHardcore((player1.getHand(1)), 1);
                 actionTaken.appendText("Player 1's RIGHT hand hit Player 2's RIGHT hand\n");
                 bottomR.setSelected(false);
             }

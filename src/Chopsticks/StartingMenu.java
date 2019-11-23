@@ -8,13 +8,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
 
 public class StartingMenu {
     @FXML
     private CheckBox onePlayer,twoPlayer;
     @FXML
-    private Button traditional, Hardcore;
+    private Button traditional, hardcore, rules, backMenu, info;
 
     public void change_page(Button b, String fxml) {
         try {
@@ -41,16 +43,32 @@ public class StartingMenu {
         }
 
         if (onePlayer.isSelected() && !twoPlayer.isSelected()) {
-            if (Hardcore.isPressed()) {
-                change_page(Hardcore, "SinglePlayerHardcore.fxml");
+            if (hardcore.isPressed()) {
+                change_page(hardcore, "SinglePlayerHardcore.fxml");
             }
         }
         else if (twoPlayer.isSelected() && !onePlayer.isSelected()) {
-            if (Hardcore.isPressed()) {
-                change_page(Hardcore, "TwoPlayersHardcore.fxml");
+            if (hardcore.isPressed()) {
+                change_page(hardcore, "TwoPlayersHardcore.fxml");
             }
         }
+    }
 
+    public void rules() {
+        change_page(rules,"Rules.fxml");
+    }
 
+    public void backRules() {
+        change_page(backMenu,"StartingMenu.fxml");
+    }
+
+    public void moreInfo() {
+        try {
+            Desktop desktop = java.awt.Desktop.getDesktop(); //this will open the browser
+            URI url = new URI("https://en.wikipedia.org/wiki/Chopsticks_(hand_game)");// with this URL
+            desktop.browse(url);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

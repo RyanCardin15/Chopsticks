@@ -22,7 +22,7 @@ public class Player {
         }
     }
 
-    public void increaseHandHardcore(int amount, int side){
+    public void increaseHardcore(int amount, int side){
         if(side == 0){
             if(leftHand.isActive())
                 leftHand.addHardcore(amount);

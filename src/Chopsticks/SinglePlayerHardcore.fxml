@@ -14,13 +14,21 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Chopsticks.SinglePlayerHardcore">
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1025.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Chopsticks.SinglePlayerHardcore">
+   <Button fx:id="BackMenu" mnemonicParsing="false" onMouseClicked="#restMenu" text="←">
+      <FlowPane.margin>
+         <Insets bottom="250.0" left="15.0" right="15.0" />
+      </FlowPane.margin>
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font>
+   </Button>
     <SplitPane dividerPositions="0.5" prefHeight="275.0" prefWidth="425.0">
         <opaqueInsets>
             <Insets />
         </opaqueInsets>
         <FlowPane.margin>
-            <Insets bottom="30.0" left="50.0" right="50.0" top="10.0" />
+            <Insets bottom="30.0" right="50.0" top="10.0" />
         </FlowPane.margin>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="200.0">
             <ImageView fx:id="p2Left" fitHeight="260.0" fitWidth="145.0" layoutX="50.0" layoutY="7.0" pickOnBounds="true" rotate="180.0">
@@ -41,15 +49,15 @@
     </SplitPane>
     <TextArea fx:id="actionTaken" editable="false" focusTraversable="false" prefHeight="295.0" prefWidth="425.0" text="Turn 1&#10;Player: 1's Turn!!&#10;" wrapText="true">
         <FlowPane.margin>
-            <Insets top="20.0" />
+          <Insets top="20.0" />
         </FlowPane.margin>
-        <font>
-            <Font size="16.0" />
-        </font>
+      <font>
+         <Font size="16.0" />
+      </font>
     </TextArea>
     <SplitPane dividerPositions="0.5" prefHeight="275.0" prefWidth="425.0">
         <FlowPane.margin>
-            <Insets left="50.0" />
+            <Insets left="75.0" />
         </FlowPane.margin>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
             <ImageView fx:id="p1Left" fitHeight="260.0" fitWidth="145.0" layoutX="50.0" layoutY="7.0" pickOnBounds="true">
@@ -58,7 +66,7 @@
                 </effect>
                 <Image url="@../Hands/Left1.jpg" />
             </ImageView>
-            <CheckBox fx:id="bottomL" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
+         <CheckBox fx:id="bottomL" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="166.0">
             <ImageView fx:id="p1Right" fitHeight="260.0" fitWidth="145.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true">
@@ -67,53 +75,52 @@
                 </effect>
                 <Image url="@../Hands/Right1.jpg" />
             </ImageView>
-            <CheckBox fx:id="bottomR" layoutX="177.0" layoutY="14.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
+         <CheckBox fx:id="bottomR" layoutX="177.0" layoutY="14.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
         </AnchorPane>
     </SplitPane>
-    <BorderPane prefHeight="200.0" prefWidth="405.0">
-        <left>
-            <Button fx:id="attackL" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#btnHitLeft_click" prefHeight="45.0" prefWidth="125.0" text="Attack Left" BorderPane.alignment="TOP_CENTER">
-                <font>
-                    <Font size="18.0" />
-                </font>
-                <BorderPane.margin>
-                    <Insets top="25.0" />
-                </BorderPane.margin>
-            </Button>
-        </left>
-        <top>
-            <Label fx:id="player" contentDisplay="CENTER" text="** Player: 1 **" textFill="#2600ff" BorderPane.alignment="BOTTOM_CENTER">
-                <font>
-                    <Font name="System Bold" size="28.0" />
-                </font>
-                <BorderPane.margin>
-                    <Insets top="40.0" />
-                </BorderPane.margin>
-            </Label>
-        </top>
-        <FlowPane.margin>
-            <Insets left="70.0" top="25.0" />
-        </FlowPane.margin>
-        <center>
-            <Button fx:id="split" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#splitting" prefHeight="45.0" prefWidth="125.0" text="Split" BorderPane.alignment="TOP_CENTER">
-                <font>
-                    <Font size="18.0" />
-                </font>
-                <BorderPane.margin>
-                    <Insets top="25.0" />
-                </BorderPane.margin>
-            </Button>
-        </center>
-        <right>
-            <Button fx:id="attackR" mnemonicParsing="false" onMouseClicked="#btnHitRight_click" prefHeight="45.0" prefWidth="125.0" text="Attack Right" BorderPane.alignment="TOP_CENTER">
-                <font>
-                    <Font size="18.0" />
-                </font>
-                <BorderPane.margin>
-                    <Insets top="25.0" />
-                </BorderPane.margin>
-            </Button>
-        </right>
-    </BorderPane>
+   <BorderPane prefHeight="200.0" prefWidth="405.0">
+      <left>
+          <Button fx:id="attackL" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#btnHitLeft_click" prefHeight="45.0" prefWidth="125.0" text="Attack Left" BorderPane.alignment="TOP_CENTER">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <BorderPane.margin>
+               <Insets top="25.0" />
+            </BorderPane.margin>
+          </Button>
+      </left>
+      <top>
+          <Label fx:id="player" contentDisplay="CENTER" text="** Player: 1 **" textFill="#2600ff" BorderPane.alignment="BOTTOM_CENTER">
+              <font>
+                <Font name="System Bold" size="28.0" />
+              </font>
+            <BorderPane.margin>
+               <Insets top="40.0" />
+            </BorderPane.margin>
+          </Label>
+      </top>
+      <FlowPane.margin>
+         <Insets left="70.0" top="25.0" />
+      </FlowPane.margin>
+      <center>
+          <Button fx:id="split" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#splitting" prefHeight="45.0" prefWidth="125.0" text="Split" BorderPane.alignment="TOP_CENTER">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <BorderPane.margin>
+               <Insets top="25.0" />
+            </BorderPane.margin>
+          </Button>
+      </center>
+      <right>
+         <Button fx:id="attackR" mnemonicParsing="false" onMouseClicked="#btnHitRight_click" prefHeight="45.0" prefWidth="125.0" text="Attack Right" BorderPane.alignment="TOP_CENTER">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <BorderPane.margin>
+               <Insets top="25.0" />
+            </BorderPane.margin>
+         </Button>
+      </right>
+   </BorderPane>
 </FlowPane>
-

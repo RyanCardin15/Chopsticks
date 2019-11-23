@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane onMouseClicked="#moreInfo" prefHeight="440.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Chopsticks.StartingMenu">
+   <TextArea editable="false" focusTraversable="false" layoutX="25.0" layoutY="51.0" prefHeight="365.0" prefWidth="675.0" text="&#9;RULES&#10;------------------------------------------------------------------------------------------------------------------&#10;-&gt;Each player uses both hands to play the game, the number of fingers extended on a hand shows the number of points that the hand has.&#10;-&gt;Both players start with each hand having one finger extended on each hand.&#10;-&gt;The goal of the game is for a player to force their opponent to extend all of their fingers on both hands.&#10;-&gt;Players take turns to tap their active hand(s) against each other, but only once per turn.&#10;-&gt;The number of points on the tapping hand is added to the number on the tapped hand, and the player with the tapped hand extends their digits to show the new score.&#10;-&gt;The tapping hand remains unchanged.&#10;-&gt;In the TRADITIONAL game mode, if the number of point exceeds five digits then the players hand will carry over the remainder digit after subtracting the new score by 5.&#10;-&gt;In the TRADITIONAL game, the player has the option to evenly divide their hands up, which is known as splitting, giving them more options to win.&#10;-&gt;In the HARDCORE game, the players hands will not carry over if their hands goes over five, the hand will be counted as a inactive hand." wrapText="true">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </TextArea>
+   <Button fx:id="backMenu" layoutX="25.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#backRules" prefHeight="30.0" prefWidth="85.0" text="Back">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="info" layoutX="612.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#moreInfo" prefHeight="30.0" prefWidth="90.0" text="LINK">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Button>
+   <Label layoutX="413.0" layoutY="17.0" text="For more info on the game --&gt;">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+</AnchorPane>

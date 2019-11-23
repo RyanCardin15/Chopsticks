@@ -39,13 +39,13 @@ public class SinglePlayerHardcore extends Chopsticks {
 
         if (bottomL.isSelected() && !bottomR.isSelected()) {
             System.out.println("\nLEFT Computers old value: "+player2.getHand(0));
-            player2.increaseHandHardcore((player1.getHand(0)), 0);
+            player2.increaseHardcore((player1.getHand(0)), 0);
             System.out.println("\nLEFT Computers new value: "+player2.getHand(0));
             actionTaken.appendText("Player 1's LEFT hand hit the Computer's LEFT hand\n");
             bottomL.setSelected(false);
         } else if (bottomR.isSelected() && !bottomL.isSelected()) {
             System.out.println("\nLEFT Computers old value: "+player2.getHand(1));
-            player2.increaseHandHardcore((player1.getHand(1)), 0);
+            player2.increaseHardcore((player1.getHand(1)), 0);
             System.out.println("\nLEFT Computers new value: "+player2.getHand(1));
             actionTaken.appendText("Player 1's RIGHT hand hit the Computer's LEFT hand\n");
             bottomR.setSelected(false);
@@ -85,11 +85,11 @@ public class SinglePlayerHardcore extends Chopsticks {
     public void btnHitRight_click(){
 
         if (bottomL.isSelected() && !bottomR.isSelected()) {
-            player2.increaseHandHardcore((player1.getHand(0)), 1);
+            player2.increaseHardcore((player1.getHand(0)), 1);
             actionTaken.appendText("Player 1's LEFT hand hit the Computer's Right hand\n");
             bottomL.setSelected(false);
         } else if (bottomR.isSelected() && !bottomL.isSelected()) {
-            player2.increaseHandHardcore((player1.getHand(1)), 1);
+            player2.increaseHardcore((player1.getHand(1)), 1);
             actionTaken.appendText("Player 1's RIGHT hand hit the Computer's Right hand\n");
             bottomR.setSelected(false);
         } else if (bottomL.isSelected() && bottomR.isSelected()) {
@@ -219,12 +219,12 @@ public class SinglePlayerHardcore extends Chopsticks {
                 if (player2.isOut(0) && player2.isOut(1))//if player 1 has both hands active and computer has both hands active
                 {
                     //computer hits player 1's random hand with its random hand
-                    player1.increaseHandHardcore(player2.getHand(randhitfrom), randhit);
+                    player1.increaseHardcore(player2.getHand(randhitfrom), randhit);
                     actionTaken.appendText("Computers " + nameCheck(randhitfrom) + " hand  hit Player 1's " + nameCheck(randhit) + " hand\n");
                 } else if (player2.isOut(0) && !player2.isOut(1))//if player 1 has both hand active and computer has only left hand
                 {
                     //computer hits player 1's random hands with its left hand
-                    player1.increaseHandHardcore(player2.getHand(0), randhit);
+                    player1.increaseHardcore(player2.getHand(0), randhit);
 
                     actionTaken.appendText("Computers left hand hit Player 1's " + nameCheck(randhit) + " hand\n");
                     //actionTaken.appendText("Computers left hand hit Player 1's " + nameCheck(randhit) + " hand\n");
@@ -232,7 +232,7 @@ public class SinglePlayerHardcore extends Chopsticks {
                 } else if (!player2.isOut(0) && player2.isOut(1))//if player 1 has both hand active and computer has only right hand
                 {
                     //computer hits player 1's random hand with its right hand
-                    player1.increaseHandHardcore(player2.getHand(1), randhit);
+                    player1.increaseHardcore(player2.getHand(1), randhit);
                     actionTaken.appendText("Computers right hand hit Player 1's " + nameCheck(randhit) + " hand\n");
                 }
             } else if (!player1.isOut(0) && player1.isOut(1))//if player 1 has only its left hand active
@@ -240,17 +240,17 @@ public class SinglePlayerHardcore extends Chopsticks {
                 if (player2.isOut(0) && player2.isOut(1))//if player 1 has right hand only and computer has both hands active
                 {
                     //computer hits player 1's right hand with its random hand
-                    player1.increaseHandHardcore(player2.getHand(randhitfrom), 1);
+                    player1.increaseHardcore(player2.getHand(randhitfrom), 1);
                     actionTaken.appendText("Computers " + nameCheck(randhitfrom) + " hand hit Player 1's right hand\n");
                 } else if (player2.isOut(0) && !player2.isOut(1))//if player 1 has right hand only and computer has only left hand
                 {
                     //computer hits player 1's right hands with its left hand
-                    player1.increaseHandHardcore(player2.getHand(0), 1);
+                    player1.increaseHardcore(player2.getHand(0), 1);
                     actionTaken.appendText("Computers left hand hit Player 1's right hand\n");
                 } else if (!player2.isOut(0) && player2.isOut(1))//if player 1 has right hand only and computer has only right hand
                 {
                     //computer hits player 1's right hand with its right hand
-                    player1.increaseHandHardcore(player2.getHand(1), 1);
+                    player1.increaseHardcore(player2.getHand(1), 1);
                     actionTaken.appendText("Computers right hand hit Player 1's right hand\n");
                 }
             } else if (player1.isOut(0) && !player1.isOut(1)) {
@@ -262,12 +262,12 @@ public class SinglePlayerHardcore extends Chopsticks {
                 } else if (player2.isOut(0) && !player2.isOut(1))//if player 1 has left hand only and computer has only left hand
                 {
                     //computer hits player 1's left hands with its left hand
-                    player1.increaseHandHardcore(player2.getHand(0), 0);
+                    player1.increaseHardcore(player2.getHand(0), 0);
                     actionTaken.appendText("Computer left hand hit Player 1's left hand\n");
                 } else if (!player2.isOut(0) && player2.isOut(1))//if player 1 has left hand only and computer has only right hand
                 {
                     //computer hits player 1's left hand with its right hand
-                    player1.increaseHandHardcore(player2.getHand(1), 0);
+                    player1.increaseHardcore(player2.getHand(1), 0);
                     actionTaken.appendText("Computers right hand hit Player 1's left hand\n");
                 }
             }
@@ -335,22 +335,22 @@ public class SinglePlayerHardcore extends Chopsticks {
             actionTaken.appendText("The Computer is the winner!!");
             player.setText("**Computer is the winner!! **");
             player.setTextFill(Paint.valueOf("Red"));
-            bottomL.setDisable(true);
-            bottomR.setDisable(true);
-            attackL.setDisable(true);
-            attackR.setDisable(true);
-            split.setDisable(true);
         }
         else if(player2.isFinished()) {
             actionTaken.appendText("Player 1 is the winner!!");
             player.setText("** Player: 1 is the winner!! **");
             player.setTextFill(Paint.valueOf("Blue"));
-            bottomL.setDisable(true);
-            bottomR.setDisable(true);
-            attackL.setDisable(true);
-            attackR.setDisable(true);
-            split.setDisable(true);
         }
+        bottomL.setDisable(true);
+        bottomR.setDisable(true);
+        attackL.setDisable(true);
+        attackR.setDisable(true);
+        split.setDisable(true);
+    }
+
+    @Override
+    public void restMenu() {
+        super.restMenu();
     }
 }
 
