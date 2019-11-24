@@ -208,8 +208,8 @@ public class SinglePlayer extends Chopsticks {
      */
     public void computerhit(){
         Random rand = new Random();
-        int randhit = rand.nextInt(9) % 2;   //The range of numbers is 0 - 8, but it only outputs 1 or 0.
-        int randhitfrom = rand.nextInt(9) % 2;  //The range of numbers is 0 - 8, but it only outputs 1 or 0.
+        int randhit = rand.nextInt(2);   //The range of numbers is 0 - 1.
+        int randhitfrom = rand.nextInt(2);  //The range of numbers is 0 - 1.
         int splitOrNot = rand.nextInt(4);   //The range of number is 0-3
 
         if(splitOrNot == 0 && player2.isOut(0) && player2.isOut(1))
