@@ -1,3 +1,13 @@
+/**
+ * <h1> Main </h1>
+ * The Main class is where the stage and scenes will be set by invoking the
+ * FXML loader which will read the StartingMenu.fxml file to build the scene graph, and
+ * inject all the objects and methods in controller class.
+ * @author Daniel Ramirez, Jennifer Mondragon, Ryan Cardin
+ * @version 1.0
+ * @since 2019-11-24
+ */
+
 package Chopsticks;
 
 import javafx.application.Application;
@@ -18,7 +28,7 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-
+    //The application now launches in main.
     public static void main(String[] args) {
         launch(args);
     }

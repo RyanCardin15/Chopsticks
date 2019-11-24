@@ -1,70 +1,76 @@
 /**
- * For two players
+ * <h1> TwoPLayersHardcore </h1>
+ * The TwoPlayersHardcore class is a child controller class extended from the Chopsticks class. This class is the
+ * controller class to the TwoPlayersHardcore.fxml which handles all the buttons events that are in this game mode.
+ * This is the HARDCORE game mode which the player chooses to in the starting menu.
+ * @author Daniel Ramirez, Jennifer Mondragon, Ryan Cardin
+ * @version 1.0
+ * @since 2019-11-24
  */
 
 package Chopsticks;
 
-import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Paint;
 
 
 public class TwoPlayersHardcore extends Chopsticks {
 
+    @Override
     public void turnChange() {
 
-        if (player1.isFinished() || player2.isFinished()) {
+        if (player1.hasLost() || player2.hasLost()) {   //Displays the winner
             gameWinner();
         }
         else {
             turn++;
-            if ((turn % 2) == 0) {
-                topL.setDisable(false);
+            if ((turn % 2) == 0) {      //player 2's turn
+                topL.setDisable(false);     //enable the player 2's checkboxes
                 topR.setDisable(false);
-                bottomL.setDisable(true);
+                bottomL.setDisable(true);   //disable the player 1's checkboxes
                 bottomR.setDisable(true);
                 actionTaken.appendText("Turn: " + turn);
                 actionTaken.appendText("\nPlayer: 2's Turn!!\n");
-                player.setText("** Player: 2 **");
+                player.setText("** Player: 2 **");                      //change the label to player 2.
                 player.setTextFill(Paint.valueOf("Red"));
 
-            } else {
-                topL.setDisable(true);
+            } else {                //player 1's turn
+                topL.setDisable(true);      //disable the player 2's checkboxes
                 topR.setDisable(true);
-                bottomL.setDisable(false);
+                bottomL.setDisable(false);  //enable the player 1's checkboxes
                 bottomR.setDisable(false);
                 actionTaken.appendText("Turn: " + turn);
                 actionTaken.appendText("\nPlayer: 1's Turn!!\n");
-                player.setText("** Player: 1 **");
+                player.setText("** Player: 1 **");                      //change the label to player 1.
                 player.setTextFill(Paint.valueOf("Blue"));
             }
         }
     }
 
-    @FXML
+    @Override
     public void btnHitLeft_click(){
 
-        if ((turn%2)==0) {
+        if ((turn%2)==0) { //player 2's turn
             if (topL.isSelected() && !topR.isSelected()) {
                 player1.increaseHardcore((player2.getHand(0)), 0);
                 actionTaken.appendText("Player 2's LEFT hand hit Player 1's LEFT hand\n");
-                topL.setSelected(false);
+                topL.setSelected(false);            //deselect the checkbox
             }
             else if (topR.isSelected() && !topL.isSelected()) {
                 player1.increaseHardcore((player2.getHand(1)), 0);
                 actionTaken.appendText("Player 2's RIGHT hand hit Player 1's LEFT hand\n");
-                topR.setSelected(false);
+                topR.setSelected(false);            //deselect the checkbox
             }
             else if (topL.isSelected() && topR.isSelected()) {
                 actionTaken.appendText("Player 2 what are you doing?? Next turn!\n");
-                topL.setSelected(false);
+                topL.setSelected(false);            //deselect the checkboxes
                 topR.setSelected(false);
             }
             else
                 actionTaken.appendText("Player 2 passes\n");
 
             if(player1.isOut(0)) {
-                switch (player1.getHand(0)) {
+                switch (player1.getHand(0)) {       //updates the hand image.
                     case 1:
                         p1Left.setImage(new Image("/Hands/Left1.jpg"));
                         break;
@@ -86,26 +92,26 @@ public class TwoPlayersHardcore extends Chopsticks {
                 actionTaken.appendText("This hand has been destroyed\n");
             }
         }
-        else {
+        else {  //player 1's turn
             if (bottomL.isSelected() && !bottomR.isSelected()) {
                 player2.increaseHardcore((player1.getHand(0)), 0);
                 actionTaken.appendText("Player 1's LEFT hand hit Player 2's LEFT hand\n");
-                bottomL.setSelected(false);
+                bottomL.setSelected(false);         //deselect the checkbox
             }
             else if (bottomR.isSelected() && !bottomL.isSelected()) {
                 player2.increaseHardcore((player1.getHand(1)), 0);
                 actionTaken.appendText("Player 1's RIGHT hand hit Player 2's LEFT hand\n");
-                bottomR.setSelected(false);
+                bottomR.setSelected(false);          //deselect the checkbox
             }
             else if (bottomL.isSelected() && bottomR.isSelected()) {
                 actionTaken.appendText("Player 1 what are you doing?? Next turn!\n");
-                bottomL.setSelected(false);
+                bottomL.setSelected(false);          //deselect the checkboxes
                 bottomR.setSelected(false);
             }
             else
                 actionTaken.appendText("Player 1 passes\n");
 
-            if(player2.isOut(0)) {
+            if(player2.isOut(0)) {              //updates the hand image.
                 switch (player2.getHand(0)) {
                     case 1:
                         p2Left.setImage(new Image("/Hands/Right1.jpg"));
@@ -128,35 +134,32 @@ public class TwoPlayersHardcore extends Chopsticks {
                 actionTaken.appendText("This hand has been destroyed\n");
             }
         }
-        gameWinner();
-        turnChange();
+        turnChange();       //end of turn.
     }
 
-    @FXML
+    @Override
     public void btnHitRight_click(){
-        //To do: check and see if the user has two hands. If they do, ask which hand they would like to hit with. Then
-        //use that hand to grab the value to pass as the first parameter in increaseValue(); If they only have one hand, hit with the remaining one
 
-        if ((turn%2)==0) {
+        if ((turn%2)==0) {  //Player 2's turn
             if (topL.isSelected() && !topR.isSelected()) {
-            player1.increaseHardcore((player2.getHand(0)), 1);
-            actionTaken.appendText("Player 2's LEFT hand hit Player 1's RIGHT hand\n");
-            topL.setSelected(false);
+                player1.increaseHardcore((player2.getHand(0)), 1);
+                actionTaken.appendText("Player 2's LEFT hand hit Player 1's RIGHT hand\n");
+                topL.setSelected(false);            //deselect the checkbox
             }
             else if (topR.isSelected() && !topL.isSelected()) {
                 player1.increaseHardcore((player2.getHand(1)), 1);
                 actionTaken.appendText("Player 2's RIGHT hand hit Player 1's RIGHT hand\n");
-                topR.setSelected(false);
+                topR.setSelected(false);        //deselect the checkbox
             }
             else if (topL.isSelected() && topR.isSelected()){
                 actionTaken.appendText("Player 2 what are you doing?? Next turn!\n");
-                topL.setSelected(false);
+                topL.setSelected(false);        //deselect the checkboxes
                 topR.setSelected(false);
             }
             else
                 actionTaken.appendText("Player 2 passes\n");
 
-            if(player1.isOut(1)) {
+            if(player1.isOut(1)) {              //updates the hand image.
                 switch (player1.getHand(1)) {
                     case 1:
                         p1Right.setImage(new Image("/Hands/Right1.jpg"));
@@ -179,26 +182,26 @@ public class TwoPlayersHardcore extends Chopsticks {
                 actionTaken.appendText("This hand has been destroyed\n");
             }
         }
-        else {
+        else {      //Player 1's turn
             if (bottomL.isSelected() && !bottomR.isSelected()) {
                 player2.increaseHardcore((player1.getHand(0)), 1);
                 actionTaken.appendText("Player 1's LEFT hand hit Player 2's RIGHT hand\n");
-                bottomL.setSelected(false);
+                bottomL.setSelected(false);         //deselect the checkbox
             }
             else if (bottomR.isSelected() && !bottomL.isSelected()) {
                 player2.increaseHardcore((player1.getHand(1)), 1);
                 actionTaken.appendText("Player 1's RIGHT hand hit Player 2's RIGHT hand\n");
-                bottomR.setSelected(false);
+                bottomR.setSelected(false);         //deselect the checkbox
             }
             else if (bottomL.isSelected() && bottomR.isSelected()) {
                 actionTaken.appendText("Player 1 what are you doing?? Next turn!\n");
-                bottomL.setSelected(false);
+                bottomL.setSelected(false);         //deselect the checkboxes
                 bottomR.setSelected(false);
             }
             else
                 actionTaken.appendText("Player 2 passes\n");
 
-            if(player2.isOut(1)) {
+            if(player2.isOut(1)) {            //updates the hand image.
                 switch (player2.getHand(1)) {
                     case 1:
                         p2Right.setImage(new Image("/Hands/Left1.jpg"));
@@ -221,14 +224,14 @@ public class TwoPlayersHardcore extends Chopsticks {
                 actionTaken.appendText("This hand has been destroyed\n");
             }
         }
-        gameWinner();
-        turnChange();
+        turnChange();           //end of turn.
     }
 
+    @Override
     public void splitting() {
-        if ((turn%2) == 0) {
-            player2.splitFingers();
-            switch (player2.getHand(0)) {
+        if ((turn%2) == 0) {        //Player 2's turn
+            player2.splitFingers();     //split the fingers
+            switch (player2.getHand(0)) {       //update the hand image.d
                 case 1:
                     p2Left.setImage(new Image("/Hands/Right1.jpg"));
                     break;
@@ -260,11 +263,11 @@ public class TwoPlayersHardcore extends Chopsticks {
                 default:
                     break;
             }
-                actionTaken.appendText("Player 2 has split their fingers up evenly!\n");
-            }
-            else {
-                player1.splitFingers();
-            switch (player1.getHand(0)) {
+            actionTaken.appendText("Player 2 has split their fingers up evenly!\n");
+        }
+        else {          //Player 1's turn
+            player1.splitFingers();     //spit the fingers up.
+            switch (player1.getHand(0)) {       //update the hand image.
                 case 1:
                     p1Left.setImage(new Image("/Hands/Left1.jpg"));
                     break;
@@ -296,23 +299,24 @@ public class TwoPlayersHardcore extends Chopsticks {
                 default:
                     break;
             }
-                actionTaken.appendText("Player 1 has split their fingers up evenly!\n");
-            }
-        turnChange();
+            actionTaken.appendText("Player 1 has split their fingers up evenly!\n");
+        }
+        turnChange();           //end of turn.
     }
 
+    @Override
     public void gameWinner() {
-        if (player1.isFinished()) {
+        if (player1.hasLost()) {        //Display the winner.
             actionTaken.appendText("Player 2 is the winner!!");
             player.setText("** Player: 2 is the winner!! **");
             player.setTextFill(Paint.valueOf("Red"));
         }
-        else if(player2.isFinished()) {
+        else if(player2.hasLost()) {
             actionTaken.appendText("Player 1 is the winner!!");
             player.setText("** Player: 1 is the winner!! **");
             player.setTextFill(Paint.valueOf("Blue"));
         }
-        topL.setDisable(true);
+        topL.setDisable(true);      //Disable all checkboxes and buttons.
         topR.setDisable(true);
         bottomL.setDisable(true);
         bottomR.setDisable(true);
